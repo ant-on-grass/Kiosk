@@ -10,8 +10,6 @@ public class MenuItem {
      * 각 필드 값을 정의
      *
      */
-    // 키오스크
-    // 혼종 ㄴ
     private List<String> menuItemList = new ArrayList<>() {
     };
 
@@ -33,37 +31,34 @@ public class MenuItem {
         this.menuName = menuName;
         this.price = price;
         this.explain = explain;
-        // 따로
-
     }
 
+    /**
+     * getter 메서드
+     * menuName을 가지고옴
+     * @return menuName
+     */
     public String getMenuName(){
         return menuName;
     }
 
+    /**
+     * getter 메서드
+     * price을 가지고옴
+     * @return price
+     */
     public int  getPrice(){
         return price;
     }
 
+    /**
+     * getter 메서드
+     * explain을 가지고옴
+     * @return explain
+     */
     public String  getExplain(){
         return explain;
     }
 
-
-/*
-    public static void printMenuItem(List<MenuItem> menuList) {
-        String viewer;
-        for (viewer : menuList) {
-            System.out.println(viewer);
-        }
-    }
-*/
-
-/*
-
-
-    menuItemStr = menuItemList.size() + 1 + ". " + menuName + " | $ : " + price + " | " + expain + " |";
-        menuItemList.add(menuItemStr);
-*/
 
 }

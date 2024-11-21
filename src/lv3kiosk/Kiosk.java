@@ -6,15 +6,28 @@ import java.util.Scanner;
 
 public class Kiosk {
     //필드
+    /**
+     * 필드
+     * List<MenuItem> 타입의 menuItemList 객체 생성
+     */
     List<MenuItem> menuItemList = new ArrayList<>() ;
 
 
     //생성자
+    /**
+     * 생성자
+     *
+     * @param menuItems 각종 메뉴객체
+     */
     Kiosk (MenuItem ...menuItems){
         menuItemList = List.of(menuItems);
     }
     // 인자를 여러개 받겠다.
 
+    /**
+     *  start 메서드
+     *  메뉴의 총괄 관리 - 생성과 사용자에 인터페이스
+     */
     //메서드
     public void start(){
         Scanner sc = new Scanner(System.in);
