@@ -1,26 +1,28 @@
-package lv2kiosk;
+package lv3kiosk;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class Kiosk {
+    //필드
+    List<MenuItem> menuItemList = new ArrayList<>() ;
 
-        List<MenuItem> menuItemList = new ArrayList<>() ;
 
-        MenuItem iceball = new MenuItem("iceball",2000,"very cold");
-        menuItemList.add(iceball);
+    //생성자
+    Kiosk (MenuItem ...menuItems){
+        menuItemList = List.of(menuItems);
+    }
+    // 인자를 여러개 받겠다.
 
-        MenuItem ballice = new MenuItem("ballice",2000,"very cold");
-        menuItemList.add(ballice);
+    //메서드
+    public void start(){
         Scanner sc = new Scanner(System.in);
 
-
-       while(true) {
-           System.out.println("메뉴판");
-           int i = 1;
-           for (MenuItem test : menuItemList) {
+        while(true) {
+            System.out.println("메뉴판");
+            int i = 1;
+            for (MenuItem test : menuItemList) {
                 System.out.println(String.format("%2d. %-10s", i, test.getMenuName()));
                 i++;
             }
@@ -38,6 +40,8 @@ public class Main {
             }
         }
 
-
     }
+
+
+
 }

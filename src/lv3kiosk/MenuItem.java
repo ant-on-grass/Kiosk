@@ -1,6 +1,7 @@
-package lv2kiosk;
+package lv3kiosk;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuItem {
     //필드
