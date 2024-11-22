@@ -60,7 +60,13 @@ public class Menu {
                         menuItemList.get(i - 1).getPrice(), menuItemList.get(i - 1).getExplain()));
                 i++;
             }
-
         }
+
+    public MenuItem test(int test){
+        return menuItemList.get(test);
     }
+
+    }
+
+
 
