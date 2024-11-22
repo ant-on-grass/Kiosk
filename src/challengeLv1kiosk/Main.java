@@ -1,4 +1,4 @@
-package lv5kiosk;
+package challengeLv1kiosk;
 
 public class Main {
     public static void main(String[] args) {

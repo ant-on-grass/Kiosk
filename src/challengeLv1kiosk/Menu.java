@@ -1,4 +1,4 @@
-package lv5kiosk;
+package challengeLv1kiosk;
 
 import java.util.ArrayList;
 import java.util.List;
