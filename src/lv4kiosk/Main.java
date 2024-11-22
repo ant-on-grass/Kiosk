@@ -7,9 +7,13 @@ public class Main {
         MenuItem iceball = new MenuItem("iceball",2000,"very cold");
         MenuItem ballice = new MenuItem("ballice",2000,"very cold");
 
-        Kiosk newkiosk = new Kiosk(iceball, ballice);
+        Menu dessert = new Menu("dessert",iceball,ballice);
+
+        Kiosk newkiosk = new Kiosk(dessert);
 
         newkiosk.start();
+
+
 
 
 

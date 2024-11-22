@@ -8,77 +8,73 @@ import java.util.Scanner;
 public class Kiosk {
     //필드
     /**
-     * 필드
-     * List<MenuItem> 타입의 menuItemList 객체 생성
+     * kategoriebox - Menu 객체를 담는 그릇 변수
      */
-    List<MenuItem> menuItemList = new ArrayList<>() ;
-
+    List<Menu>kategoriebox = new ArrayList<>();
 
     //생성자
     /**
-     * 생성자
+     * 매개변수
      *
-     * @param menuItems 각종 메뉴객체
+     * @param menuObject kategoriebox에 담을 Menu 객체의 데이터
      */
-    Kiosk (MenuItem...menuItems){
-        menuItemList = List.of(menuItems);
+    Kiosk(Menu...menuObject){
+        kategoriebox = List.of(menuObject);
     }
-    // 인자를 여러개 받겠다.
 
     /**
      *  start 메서드
-     *  메뉴의 총괄 관리 - 생성과 사용자에 인터페이스
+     *  카테고리의 선택과 해당 카테고리의 메뉴들을 출력
      */
     //메서드
     public void start(){
         Scanner sc = new Scanner(System.in);
-     /*   Kiosk fixer = new Kiosk();
-        int checker = 0;*/
+
+
 
         while(true) {
-            System.out.println("메뉴판");
+            System.out.println("카테고리 메뉴판");
             int i = 1;
-            for (MenuItem test : menuItemList) {
-                System.out.println(String.format("%2d. %-10s", i, test.getMenuName()));
+            int selectKategorieSaver;
+            for (Menu kategorie : kategoriebox) {
+                System.out.println(String.format("%2d. %-10s", i, kategorie.getKategorieName()));
                 i++;
             }
             try {
-                // 1. while - > for - > try - > catch - > while ...
-                // 2. while - > for - > try - > while ...
-                System.out.println("보시려는 메뉴의 번호를 입력해주세요. 0을 입렵하면 종료합니다");
-                int selectMenu = sc.nextInt();
-                // < - 에러 난 곳에서 \n 이 남아있어서 try catch 가 안됨
+                System.out.println("카테고리를 선택하세요 0번을 누르면 종료합니다.");
+                int selectKategorie = sc.nextInt();
+                selectKategorieSaver = selectKategorie;
                 sc.nextLine();
 
-                if (selectMenu != 0) {
-                    System.out.println(String.format("%2d. %10s |%6d |%-20s |", selectMenu, menuItemList.get(selectMenu - 1).getMenuName(),
-                            menuItemList.get(selectMenu - 1).getPrice(), menuItemList.get(selectMenu - 1).getExplain()));
-                } else if (selectMenu == 0) {
+                if (selectKategorie != 0) {
+                    kategoriebox.get(selectKategorie-1).printMenuItems();
+                } else if (selectKategorie == 0) {
                     System.out.println("선택을 종료합니다");
-                    //checker = 1;
                     break;
+                }
+                System.out.println("메뉴를 선택합니다. 0번을 입력하면 카테고리 페이지로 이동합니다.");
+                int selectMenu = sc.nextInt();
+                sc.nextLine();
+                if(selectMenu != 0){
+                kategoriebox.get(selectKategorie-1).getKategorieItem(selectMenu);
+                } else if (selectMenu == 0) {
+                    System.out.println("메뉴페이지로 갑니다.");
+                    continue; // 현재로써는 필요가 없지만, 후에 기능 추가하면 필요
                 }
             }catch (InputMismatchException | IndexOutOfBoundsException e){
                 if( e instanceof InputMismatchException){
                     System.out.println("InputMismatchException - 잘못된 타입의 입력 값");
                     sc.nextLine();
-                    //break;
                 }else if(e instanceof IndexOutOfBoundsException){
                     System.out.println("IndexOutOfBoundsException - 범위에 없는 값 입력");
                     sc.nextLine();
-                    //break;
+
                 }
             }
+
+
+
         }
-   /*     if(checker != 1){
-            fixer.start();
-        }*/ // readme 추가할 내용 - 조잡하지만 해결하려한 결과물
 
-    }
-// InputMismatchException 잘못된 타입의 입력 값
-// IndexOutOfBoundsException 범위에 없는 값 입력
-
-// readme 추가할 내용 - 필드 안에서만 초기값 < - > 메서드는 값을 명시해줘야한다.
-    //
-
+}
 }
