@@ -10,7 +10,7 @@ public class Kiosk {
     /**
      * kategoriebox - Menu 객체를 담는 그릇 변수
      */
-    List<Menu>kategoriebox = new ArrayList<>();
+    private List<Menu>kategoriebox = new ArrayList<>();
 
     //생성자
     /**
