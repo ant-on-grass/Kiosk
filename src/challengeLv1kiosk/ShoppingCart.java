@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-
+// TODO  부족한점 메서드안에서 객체 쓰는 법을 잘 모를는 듯? 너무 대충아는 느낌?
 public class ShoppingCart {
     //필드
     List<MenuItem> ShoppingCartList = new ArrayList<>();
@@ -34,7 +34,7 @@ public class ShoppingCart {
     // 출력하기 - 합
     public void shoppingCartPrint() {
         Scanner sc = new Scanner(System.in);
-        ShoppingCart shoppingCart = new ShoppingCart();
+        //  ShoppingCart shoppingCart = new ShoppingCart() // TODO 1. 오 세상에!!
 
         System.out.println("0. 메뉴로 돌아가기");
         System.out.println("1. 주문 내역 확인");
@@ -52,7 +52,7 @@ public class ShoppingCart {
                             item.getPrice(), item.getExplain()));
                     i++;
                 }
-                shoppingCart.shoppingCartPrint();
+                this.shoppingCartPrint(); // TODO 1. 오 세상에!!
 
             }
             case 2 -> { // 합계 금액

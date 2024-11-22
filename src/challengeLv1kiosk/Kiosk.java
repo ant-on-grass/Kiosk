@@ -31,7 +31,7 @@ public class Kiosk {
 
     public void tester(ShoppingCart shoppingCart) {
 
-        if (shoppingCart.getShoppingCartList().size() != 0) {
+        if (shoppingCart.getShoppingCartList().size() != 0) { // TODO 고칠곳 어떻게 하는 걸까 고민해 보자
             shoppingCart.shoppingCartPrint();
         }
 
@@ -49,7 +49,7 @@ public class Kiosk {
 
         while (true) {
             if (shoppingCart.getShoppingCartList().size() != 0) {
-                shoppingCart.shoppingCartPrint();
+                shoppingCart.shoppingCartPrint(); // TODO 고칠곳
             }
             System.out.println("카테고리 메뉴판");
             int i = 1;
@@ -66,7 +66,7 @@ public class Kiosk {
 
                 if (selectKategorie != 0) {
                     kategoriebox.get(selectKategorie - 1).printMenuItems();
-                } else if (selectKategorie == 0) {
+                } else if (selectKategorie == 0) { // TODO 고칠곳
                     System.out.println("선택을 종료합니다");
                     break;
                 }
@@ -95,7 +95,7 @@ public class Kiosk {
                     System.out.println("메뉴페이지로 갑니다.");
                     continue; // 현재로써는 필요가 없지만, 후에 기능 추가하면 필요
                 }
-            } catch (InputMismatchException | IndexOutOfBoundsException e) {
+            } catch (InputMismatchException | IndexOutOfBoundsException e) { // TODO 추가할것 고칠곳 최상의 예외를 마지막에 넣는 습관을 들이자
                 if (e instanceof InputMismatchException) {
                     System.out.println("InputMismatchException - 잘못된 타입의 입력 값");
                     sc.nextLine();
