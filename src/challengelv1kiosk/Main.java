@@ -1,7 +1,4 @@
-package challengeLv1kiosk;
-
-import java.util.ArrayList;
-import java.util.List;
+package challengelv1kiosk;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package challengeLv1kiosk;
+package challengelv1kiosk;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
