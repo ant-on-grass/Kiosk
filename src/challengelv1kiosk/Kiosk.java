@@ -31,7 +31,7 @@ public class Kiosk {
 
     public void tester(ShoppingCart shoppingCart) {
 
-        if (shoppingCart.getShoppingCartList().size() != 0) { // TODO 고칠곳 어떻게 하는 걸까 고민해 보자
+        if (shoppingCart.getShoppingCartList().size() != 0) { // TODO
             shoppingCart.shoppingCartPrint();
         }
 
@@ -40,7 +40,7 @@ public class Kiosk {
 
     /**
      * start 메서드
-     * 카테고리의 선택과 해당 카테고리의 메뉴들을 출력
+     * 카테고리의 선택과 해당 카테고리의 메뉴들을 출력 + ShoppingCart 의 shoppingCartPrint 메서드 호출
      */
     public void start() {
         Scanner sc = new Scanner(System.in);
@@ -49,7 +49,7 @@ public class Kiosk {
 
         while (true) {
             if (shoppingCart.getShoppingCartList().size() != 0) {
-                shoppingCart.shoppingCartPrint(); // TODO 고칠곳
+                shoppingCart.shoppingCartPrint(); // TODO
             }
             System.out.println("카테고리 메뉴판");
             int i = 1;
@@ -95,11 +95,11 @@ public class Kiosk {
                     System.out.println("메뉴페이지로 갑니다.");
                     continue; // 현재로써는 필요가 없지만, 후에 기능 추가하면 필요
                 }
-            } catch (InputMismatchException | IndexOutOfBoundsException e) { // TODO 추가할것 고칠곳 최상의 예외를 마지막에 넣는 습관을 들이자
+            } catch (InputMismatchException | IndexOutOfBoundsException e) { // TODO
                 if (e instanceof InputMismatchException) {
                     System.out.println("InputMismatchException - 잘못된 타입의 입력 값");
                     sc.nextLine();
-                } else if (e instanceof IndexOutOfBoundsException) {
+                } else if (e instanceof IndexOutOfBoundsException) { // TODO
                     System.out.println("IndexOutOfBoundsException - 범위에 없는 값 입력");
                     sc.nextLine();
 

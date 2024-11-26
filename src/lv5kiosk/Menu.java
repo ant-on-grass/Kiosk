@@ -14,8 +14,6 @@ public class Menu {
     private List<List<MenuItem>> menuKategorie = new ArrayList<>();
     private String kategorieName;
 
-
-    //생성자
     /**
      *  매개변수
      *
@@ -26,8 +24,6 @@ public class Menu {
         menuItemList = List.of(menuItems);
         kategorieName = kategorieStr;
     }
-
-    // 메서드
 
     /**
      * getter 메서드

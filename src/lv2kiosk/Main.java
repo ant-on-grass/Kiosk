@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        // 객체 선언 및 생성
         List<MenuItem> menuItemList = new ArrayList<>() ;
 
         MenuItem iceball = new MenuItem("iceball",2000,"very cold");
@@ -16,7 +16,7 @@ public class Main {
         menuItemList.add(ballice);
         Scanner sc = new Scanner(System.in);
 
-
+        // 구동 파트
        while(true) {
            System.out.println("메뉴판");
            int i = 1;

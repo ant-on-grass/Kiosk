@@ -6,36 +6,30 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Kiosk {
-    //필드
+
     /**
      * 필드
      * List<MenuItem> 타입의 menuItemList 객체 생성
      */
-    List<MenuItem> menuItemList = new ArrayList<>() ;
+    List<MenuItem> menuItemList = new ArrayList<>();
 
-
-    //생성자
     /**
      * 생성자
      *
      * @param menuItems 각종 메뉴객체
      */
-    Kiosk (MenuItem ...menuItems){
+    Kiosk(MenuItem... menuItems) {
         menuItemList = List.of(menuItems);
     }
-    // 인자를 여러개 받겠다.
 
     /**
-     *  start 메서드
-     *  메뉴의 총괄 관리 - 생성과 사용자에 인터페이스
+     * start 메서드
+     * 메뉴의 총괄 관리 - 생성과 사용자에 인터페이스
      */
-    //메서드
-    public void start(){
+    public void start() {
         Scanner sc = new Scanner(System.in);
-     /*   Kiosk fixer = new Kiosk();
-        int checker = 0;*/
 
-        while(true) {
+        while (true) {
             System.out.println("메뉴판");
             int i = 1;
             for (MenuItem test : menuItemList) {
@@ -58,27 +52,17 @@ public class Kiosk {
                     //checker = 1;
                     break;
                 }
-            }catch (InputMismatchException | IndexOutOfBoundsException e){
-                if( e instanceof InputMismatchException){
+            } catch (InputMismatchException | IndexOutOfBoundsException e) {
+                if (e instanceof InputMismatchException) {
                     System.out.println("InputMismatchException - 잘못된 타입의 입력 값");
                     sc.nextLine();
                     //break;
-                }else if(e instanceof IndexOutOfBoundsException){
+                } else if (e instanceof IndexOutOfBoundsException) {
                     System.out.println("IndexOutOfBoundsException - 범위에 없는 값 입력");
                     sc.nextLine();
                     //break;
                 }
             }
         }
-   /*     if(checker != 1){
-            fixer.start();
-        }*/ // readme 추가할 내용 - 조잡하지만 해결하려한 결과물
-
     }
-// InputMismatchException 잘못된 타입의 입력 값
-// IndexOutOfBoundsException 범위에 없는 값 입력
-
-// readme 추가할 내용 - 필드 안에서만 초기값 < - > 메서드는 값을 명시해줘야한다.
-    //
-
 }

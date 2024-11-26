@@ -5,10 +5,10 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-// TODO  부족한점 메서드안에서 객체 쓰는 법을 잘 모를는 듯? 너무 대충아는 느낌?
+
 public class ShoppingCart {
     //필드
-    List<MenuItem> ShoppingCartList = new ArrayList<>();
+    private List<MenuItem> ShoppingCartList = new ArrayList<>();
 
     //생성자
     ShoppingCart() {
@@ -17,21 +17,41 @@ public class ShoppingCart {
 
 
     //메서드
-    // 만들기
+
+    /**
+     * 메뉴아이템 객체를 담는 메서드
+     *
+     * @return ShoppingCartList
+     */
     public void shoppingCartPutIn(MenuItem item) {
         ShoppingCartList.add(item);
     }
 
-    // 지우기
+    /**
+     *메뉴아이템 객체 원소를 제거하는 메서드
+     *
+     * @return ShoppingCartList
+     */
     public void shoppingCartRemove(MenuItem... item) {
         ShoppingCartList.remove(item);
     }
+
+    /**
+     * getter 메서드
+     *
+     * @return ShoppingCartList
+     */
     public List<MenuItem> getShoppingCartList(){
         return ShoppingCartList;
     }
 
 
-    // 출력하기 - 합
+    /**
+     * 메서드
+     * Kiosk 클래스 start 메서드에 일부분
+     * 주문할 때 필요한 콘솔 인터페이스의 한 부분으로 주문 취소 주문하기 주문내역 확인하기의 기능이 있다.
+     * @return ShoppingCartList
+     */
     public void shoppingCartPrint() {
         Scanner sc = new Scanner(System.in);
         //  ShoppingCart shoppingCart = new ShoppingCart() // TODO 1. 오 세상에!!
@@ -44,6 +64,7 @@ public class ShoppingCart {
         int selectNum = sc.nextInt();
         sc.nextLine();
 
+        // switch 문으로 사용자 입력에 맞는 값을 실행
         switch (selectNum) {
             case 1 -> {
                 int i = 1;
@@ -52,7 +73,7 @@ public class ShoppingCart {
                             item.getPrice(), item.getExplain()));
                     i++;
                 }
-                this.shoppingCartPrint(); // TODO 1. 오 세상에!!
+                this.shoppingCartPrint(); // TODO
 
             }
             case 2 -> { // 합계 금액

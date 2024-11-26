@@ -3,7 +3,6 @@ package lv2kiosk;
 import java.util.*;
 
 public class MenuItem {
-    //필드
     /**
      * 필드
      * 각 필드 값을 정의
@@ -16,7 +15,6 @@ public class MenuItem {
     private String explain;
     private String menuItemStr;
 
-    // 기본 생성자
     /**
      * 생성자
      * 생성자를 만들 때, 필요한 파라미터와 필드 초기값

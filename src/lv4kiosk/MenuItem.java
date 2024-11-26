@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuItem {
-    //필드
     /**
      * 필드
      * 각 필드 값을 정의
@@ -17,8 +16,6 @@ public class MenuItem {
     private int price;
     private String explain;
     private String menuItemStr;
-
-    // 기본 생성자
 
     /**
      * 생성자

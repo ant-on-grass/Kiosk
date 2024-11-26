@@ -62,6 +62,12 @@ public class Menu {
             }
         }
 
+    /**
+     *  getter 메서드
+     *  카테고리 번호에 맞는 menuItemList 를 불러오는 메서드
+      * @param test
+     * @return
+     */
     public MenuItem test(int test){
         return menuItemList.get(test);
     }
