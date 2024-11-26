@@ -6,13 +6,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Kiosk {
-    //필드
     /**
      * kategoriebox - Menu 객체를 담는 그릇 변수
      */
     private List<Menu> kategoriebox = new ArrayList<>();
 
-    //생성자
 
     /**
      * 매개변수
@@ -24,11 +22,20 @@ public class Kiosk {
     }
 
 
-    //메서드
+    /**
+     * getter 메서드
+     *
+     * @return kategoriebox
+     */
     public List<Menu> getKategoriebox() {
         return kategoriebox;
     }
 
+    /**
+     *  shoppingCartPrint 메서드 반복 호출 메서드
+     *  shoppingCartPrint 를 호출 할 때 , shoppingCart 의 ShoppingCartList 사이즈를 보고 반복할 지를 정함
+     * @param shoppingCart
+     */
     public void tester(ShoppingCart shoppingCart) {
 
         if (shoppingCart.getShoppingCartList().size() != 0) { // TODO
