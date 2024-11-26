@@ -55,12 +55,10 @@ public class Kiosk {
 
 
         while (true) {
-            if (shoppingCart.getShoppingCartList().size() != 0) {
-                shoppingCart.shoppingCartPrint(); // TODO
-            }
+            this.tester(shoppingCart); // shoppingCartPrint 를 호출 할 때 , shoppingCart 의 ShoppingCartList 사이즈를 보고 반복할 지를 정함
             System.out.println("카테고리 메뉴판");
             int i = 1;
-            int selectKategorieSaver;
+
             for (Menu kategorie : kategoriebox) {
                 System.out.println(String.format("%2d. %-10s", i, kategorie.getKategorieName()));
                 i++;
@@ -68,7 +66,7 @@ public class Kiosk {
             try {
                 System.out.println("카테고리를 선택하세요 0번을 누르면 종료합니다.");
                 int selectKategorie = sc.nextInt();
-                selectKategorieSaver = selectKategorie;
+
                 sc.nextLine();
 
                 if (selectKategorie != 0) {
@@ -92,15 +90,15 @@ public class Kiosk {
                     int selectNum = sc.nextInt();
                     sc.nextLine();
                     if (selectNum == 1) {
-                        shoppingCart.shoppingCartPutIn(menuItem);
+                        shoppingCart.shoppingCartPutIn(menuItem); // 메뉴아이템 객체를 담는 메서드
                         //shoppingCart.shoppingCartPrint();
                     } else if (selectNum == 0) {
                         System.out.println("메뉴페이지로 갑니다.");
-                        continue;
+                        // continue;
                     }
                 } else if (selectMenu == 0) {
                     System.out.println("메뉴페이지로 갑니다.");
-                    continue; // 현재로써는 필요가 없지만, 후에 기능 추가하면 필요
+                    // continue; // 현재로써는 필요가 없지만, 후에 기능 추가하면 필요
                 }
             } catch (InputMismatchException | IndexOutOfBoundsException e) { // TODO
                 if (e instanceof InputMismatchException) {
